@@ -1,0 +1,113 @@
+
+main {
+    background: #0d0a07 ;
+    padding: 2rem 1rem;
+    min-height: 60vh;
+    width: 100%;          
+    max-width: 100%;      
+    box-sizing: border-box; 
+}
+
+main h2 {
+    color: #f59e0b ;
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+}
+
+/* Dark cave card container */
+.cave-card {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    background: #1c1410;
+    border: 1px solid #78350f;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+    color: #fef3c7;
+}
+
+/* Headings inside cave */
+.cave-card h1, .cave-card h3 {
+    color: #f59e0b;
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+}
+
+.cave-card p, .cave-card li {
+    color: #d6d3c4;
+}
+
+
+/* Labels and legends */
+.cave-card label,
+.cave-card legend {
+    color: #f59e0b;
+    font-weight: 600;
+}
+
+/* Form inputs */
+.cave-card input[type="text"],
+.cave-card input[type="email"],
+.cave-card input[type="number"],
+.cave-card select,
+.cave-card textarea {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.3rem;
+    border-radius: 6px;
+    border: 1px solid #78350f;
+    background: #0d0a07;
+    color: #fef3c7;
+    font-size: 0.95rem;
+}
+
+/* Buttons */
+.cave-btn {
+    padding: 0.6rem 2rem;
+    background: #b45309;
+    color: #fef3c7;
+    border: 2px solid #f59e0b;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+}
+
+.cave-btn:hover {
+    background: #f59e0b;
+    color: #1c1410;
+}
+
+/* Tables */
+.cave-card table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cave-card thead {
+    background: #78350f;
+    color: #fef3c7;
+}
+
+.cave-card th,
+.cave-card td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #3b2010;
+    color: #fef3c7;
+    text-align: left;
+}
+
+.cave-card tr:hover {
+    background: rgba(245, 158, 11, 0.08);
+}
+
+/* Links */
+.cave-card a {
+    color: #f59e0b;
+}
+
+.cave-card a:hover {
+    color: #fef3c7;
+}

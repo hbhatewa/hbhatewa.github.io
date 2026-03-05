@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barista Manual | Bat Cave Café | ITIS 3135</title>
+  <link rel="stylesheet" href="styles/default.css">
+  <link rel="stylesheet" href="styles/batcavecafe.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .doc-wrapper {
+      display: flex;
+      background: #0d0a07;
+      min-height: 70vh;
+    }
+
+    #navbar {
+      position: sticky;
+      top: 0;
+      width: 240px;
+      min-width: 240px;
+      height: 100vh;
+      background: #1c1410;
+      border-right: 2px solid #78350f;
+      overflow-y: auto;
+    }
+
+    #navbar header {
+      color: #f59e0b;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 1.2rem;
+      border-bottom: 1px solid #78350f;
+    }
+
+    a.nav-link {
+      display: block;
+      padding: 0.75rem 1.2rem;
+      color: #d6d3c4;
+      text-decoration: none;
+      font-size: 0.88rem;
+      border-bottom: 1px solid #3b2010;
+    }
+
+    a.nav-link:hover {
+      background: #3b2010;
+      color: #f59e0b;
+    }
+
+    #main-doc {
+      flex: 1;
+      padding: 2rem 2.5rem;
+      color: #d6d3c4;
+    }
+
+    .main-section {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #3b2010;
+    }
+
+    .main-section:last-child { border-bottom: none; }
+
+    .main-section header {
+      font-size: 1.5rem;
+      color: #f59e0b;
+      margin-bottom: 1rem;
+    }
+
+    #main-doc p { line-height: 1.8; margin-bottom: 0.9rem; }
+
+    #main-doc ul, #main-doc ol {
+      margin: 0.5rem 0 1rem 1.5rem;
+      line-height: 1.9;
+    }
+
+    #main-doc code {
+      display: block;
+      background: #0d0a07;
+      border: 1px solid #78350f;
+      border-left: 4px solid #f59e0b;
+      color: #fde68a;
+      font-family: 'Courier New', monospace;
+      font-size: 0.88rem;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 6px;
+      white-space: pre;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .doc-wrapper { flex-direction: column; }
+      #navbar { position: relative; width: 100%; min-width: unset; height: auto; }
+      #main-doc { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div data-include="components/header.html"></div>
+
+  <div class="doc-wrapper">
+
+    <nav id="navbar">
+      <header>🦇 Cave Barista Manual</header>
+      <a class="nav-link" href="#Espresso_Fundamentals">Espresso Fundamentals</a>
+      <a class="nav-link" href="#Milk_Steaming_and_Texture">Milk Steaming and Texture</a>
+      <a class="nav-link" href="#Signature_Recipes">Signature Recipes</a>
+      <a class="nav-link" href="#Cold_Brew">Cold Brew</a>
+      <a class="nav-link" href="#Equipment_and_Maintenance">Equipment and Maintenance</a>
+    </nav>
+
+    <main id="main-doc">
+
+      <section class="main-section" id="Espresso_Fundamentals">
+        <header>Espresso Fundamentals</header>
+        <p>Every drink at the Bat Cave Café starts with a well-pulled espresso. Before touching any other preparation, a barista must master the shot.</p>
+        <p>Espresso is made by forcing hot water at high pressure through finely ground coffee, producing a concentrated shot with a thick reddish-brown crema on top.</p>
+        <code>Dose:        18g
+Yield:       36g
+Ratio:       1:2
+Time:        28–32 seconds
+Temperature: 93°C
+Pressure:    9 bars</code>
+        <ul>
+          <li>Grind finer if the shot runs under 25 seconds</li>
+          <li>Grind coarser if the shot runs over 35 seconds</li>
+          <li>Always purge the group head 2–3 seconds before locking in the portafilter</li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Milk_Steaming_and_Texture">
+        <header>Milk Steaming and Texture</header>
+        <p>At the Bat Cave Café we aim for silky microfoam — milk that pours like wet paint and integrates seamlessly with espresso.</p>
+        <p>Always start with cold milk straight from the fridge. Submerge the steam wand just below the surface and angle the pitcher slightly. You should hear a gentle hiss, not a loud scream.</p>
+        <code>Start temp:  4–6°C
+Final temp:  60–65°C
+Flat White → 2–3mm foam
+Latte      → 5–8mm foam
+Cappuccino → 1–2cm foam</code>
+        <ul>
+          <li>Never re-steam milk — discard and start fresh</li>
+          <li>Purge and wipe the steam wand after every use</li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Signature_Recipes">
+        <header>Signature Recipes</header>
+        <p>Every barista must memorise these house recipes before their first solo shift. Do not adjust ratios without manager approval.</p>
+        <p>The Lunar Latte and Eclipse Mocha are the two most ordered drinks in the cave — consistency on these is non-negotiable.</p>
+        <code>-- Lunar Latte --
+Espresso:        36g double shot
+Milk:            160ml, medium foam
+Vanilla syrup:   10ml (2 pumps)
+Top:             pinch of silver dust
+
+-- Eclipse Mocha --
+Espresso:        36g double shot
+Dark choc sauce: 15ml
+Milk:            150ml, light foam
+Top:             dark cocoa powder</code>
+        <ul>
+          <li>Add chocolate sauce before espresso on the mocha — not after</li>
+          <li>Silver dust is in the spice drawer, not on the bar</li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Cold_Brew">
+        <header>Cold Brew</header>
+        <p>Cold brew is made in-house every 20 hours using a slow steep method. It is never made by pouring hot espresso over ice — that is an iced americano and is a separate item.</p>
+        <p>The opening barista starts a new batch each morning for the following day's service. Every batch must be labelled with brew start time and ready time.</p>
+        <code>Coffee (coarse grind): 120g
+Cold filtered water:   1000ml
+Steep time:            18–20 hours
+Temperature:           4°C (fridge)
+Serve ratio:           1:1 brew to water or milk</code>
+        <ul>
+          <li>Use coarse grind only — fine grind over-extracts the cold brew</li>
+          <li>Never steep beyond 22 hours</li>
+          <li>Cold brew keeps for up to 7 days refrigerated</li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Equipment_and_Maintenance">
+        <header>Equipment and Maintenance</header>
+        <p>Every barista is responsible for equipment cleanliness. A clean machine pulls better shots and lasts longer. Do not leave the bar without completing the end-of-shift checklist.</p>
+        <p>The espresso machine must be backflushed with cleaner tablets every closing shift. Skipping this damages the group head seals over time.</p>
+        <code>Every shot:   purge group head, knock puck immediately
+Hourly:       wipe wand, drip tray, counter
+End of shift: backflush (3x plain + 1x cleaner)
+              soak portafilters 20 min
+              empty and rinse drip trays
+              wipe machine exterior</code>
+        <ul>
+          <li>Report unusual machine sounds to the manager immediately</li>
+          <li>Log all grinder usage — burrs replaced every 300kg</li>
+          <li>Steam wand o-rings replaced monthly</li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+
+  <div data-include="components/footer.html"></div>
+  <script src="../scripts/HTMLInclude.min.js"></script>
+</body>
+</html>

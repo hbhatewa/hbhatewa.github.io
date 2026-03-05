@@ -3,18 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Survey | ITIS 3135</title>
+    <title>Survey | Bat Cave Café | ITIS 3135</title>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/default.css">
+    <link rel="stylesheet" href="styles/batcavecafe.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        #title {
+    font-size: 2rem;
+    text-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
+    margin-bottom: 0.4rem;
+        }
+
+        #description {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+        }
+
+        #survey-form label {
+            display: block;
+            margin-top: 1.2rem;
+        }
+        fieldset {
+            border: none;
+            padding: 0;
+            margin-top: 1.2rem;
+        }
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin-top: 0.5rem;
+        }
+        .radio-group label,
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: normal;
+            color: #fef3c7;
+            margin-top: 0;
+        }
+        #survey-form textarea {
+            height: 120px;
+            resize: vertical;
+        }
+    </style>
 </head>
 <body>
     <div data-include="components/header.html"></div>
-    
+
     <main>
         <h2>Survey Form (FCC RWD Project)</h2>
-        <p>Survey.</p>
+
+        <div class="cave-card">
+            <h1 id="title">🦇 Bat Cave Café – Guest Feedback</h1>
+            <p id="description">
+                Help us brew the perfect experience! Share your thoughts about
+                your visit to the Bat Cave Café — every response helps us keep
+                the cave cozy.
+            </p>
+
+            <form id="survey-form">
+
+                <label id="name-label" for="name">Full Name</label>
+                <input
+                    id="name"
+                    type="text"
+                    placeholder="Enter your full name"
+                    required
+                />
+
+                <label id="email-label" for="email">Email Address</label>
+                <input
+                    id="email"
+                    type="email"
+                    placeholder="Enter your email address"
+                    required
+                />
+
+                <label id="number-label" for="number">Your Age</label>
+                <input
+                    id="number"
+                    type="number"
+                    placeholder="Enter your age (13–110)"
+                    min="13"
+                    max="110"
+                />
+
+                <label for="dropdown">How did you hear about us?</label>
+                <select id="dropdown">
+                    <option value="social-media">Social Media</option>
+                    <option value="friend">Friend or Family</option>
+                    <option value="walking-by">Wandered into the cave</option>
+                    <option value="online-search">Online Search</option>
+                </select>
+
+                <fieldset>
+                    <legend>Would you visit Bat Cave Café again?</legend>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="revisit" value="definitely" />
+                            Definitely – I'm already a regular!
+                        </label>
+                        <label>
+                            <input type="radio" name="revisit" value="probably" />
+                            Probably – the vibes were immaculate
+                        </label>
+                        <label>
+                            <input type="radio" name="revisit" value="not-sure" />
+                            Not sure – too many bats
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>What did you enjoy? (Select all that apply)</legend>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" value="coffee" />
+                            The coffee &amp; drinks
+                        </label>
+                        <label>
+                            <input type="checkbox" value="food" />
+                            The food &amp; pastries
+                        </label>
+                        <label>
+                            <input type="checkbox" value="atmosphere" />
+                            The cave atmosphere
+                        </label>
+                        <label>
+                            <input type="checkbox" value="staff" />
+                            Friendly staff
+                        </label>
+                    </div>
+                </fieldset>
+
+                <label for="comments">Additional Comments</label>
+                <textarea
+                    id="comments"
+                    placeholder="Tell us anything else about your cave experience..."
+                ></textarea>
+
+                <button id="submit" type="submit" class="cave-btn">
+                    Submit Feedback
+                </button>
+
+            </form>
+        </div>
     </main>
-    
+
     <div data-include="components/footer.html"></div>
     <script src="../scripts/HTMLInclude.min.js"></script>
 </body>

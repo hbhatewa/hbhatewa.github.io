@@ -1,21 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory | ITIS 3135</title>
-    <link rel="stylesheet" href="styles/default.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drink Catalog | Bat Cave Café | ITIS 3135</title>
+  <link rel="stylesheet" href="styles/default.css">
+  <link rel="stylesheet" href="styles/batcavecafe.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    main {
+      background: #0d0a07;
+      padding: 2rem 1rem;
+      min-height: 60vh;
+    }
+
+    main > h2 {
+      color: #f59e0b;
+      text-align: center;
+      margin-bottom: 0.2rem;
+    }
+
+    main > p.subtitle {
+      color: #d6d3c4;
+      font-style: italic;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    table {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background: #1c1410;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      border: 1px solid #78350f;
+    }
+
+    thead {
+      background: #0d0a07;
+    }
+
+    th {
+      color: #f59e0b;
+      padding: 14px 16px;
+      text-align: left;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-bottom: 2px solid #78350f;
+    }
+
+    td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #3b2010;
+      font-size: 0.95rem;
+      color: #fef3c7;
+    }
+
+    th:last-child,
+    td:last-child {
+      text-align: center;
+    }
+
+    th:nth-child(4),
+    td:nth-child(4) {
+      text-align: center;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr[class="read"] {
+      background-image: linear-gradient(to right, #3b2010, #1c1410);
+    }
+
+    tr[class="to-read"] {
+      background-image: linear-gradient(to right, #2e1a47, #1c1410);
+    }
+
+    span {
+      display: inline-block;
+    }
+
+    tr[class="read"] span[class="status"] {
+      border: 1px solid #f59e0b;
+      background-image: linear-gradient(to right, #b45309, #78350f);
+    }
+
+    tr[class="to-read"] span[class="status"] {
+      border: 1px solid #a855f7;
+      background-image: linear-gradient(to right, #4c1d95, #2e1a47);
+    }
+
+    span[class="status"],
+    span[class^="rate"] {
+      height: 24px;
+      width: 110px;
+      padding: 3px 6px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      text-align: center;
+      color: #fef3c7;
+    }
+
+    span[class^="rate"] > span {
+      border: 1px solid #78350f;
+      border-radius: 999px;
+      margin: 0 2px;
+      height: 12px;
+      width: 18px;
+      background-color: #3b2010;
+    }
+
+    span[class~="one"] > span:first-child {
+      background-image: linear-gradient(to right, #f59e0b, #fde68a);
+    }
+
+    span[class~="two"] > span:nth-child(-n+2) {
+      background-image: linear-gradient(to right, #f59e0b, #fde68a);
+    }
+
+    span[class~="three"] span {
+      background-image: linear-gradient(to right, #f59e0b, #fde68a);
+    }
+
+    td .category-tag {
+      background: #3b2010;
+      color: #fde68a;
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 6px;
+      border: 1px solid #78350f;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+  </style>
 </head>
 <body>
-    <div data-include="components/header.html"></div>
-    
-    <main>
-        <h2>Inventory (FCC RWD Project)</h2>
-        <p>Inventory.</p>
-    </main>
-    
-    <div data-include="components/footer.html"></div>
-    <script src="../scripts/HTMLInclude.min.js"></script>
+  <div data-include="components/header.html"></div>
+
+  <main>
+    <h2>🦇 Cave Cellar – Full Drink Catalog</h2>
+    <p class="subtitle">Every brew, blend, and batch served in the cave — rated by our baristas</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Drink</th>
+          <th>Crafted By</th>
+          <th>Category</th>
+          <th>Availability</th>
+          <th>Cave Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- Espresso -->
+        <tr class="read">
+          <td>Cave Brew</td>
+          <td>Barista Marcus</td>
+          <td><span class="category-tag">Espresso</span></td>
+          <td><span class="status">Available</span></td>
+          <td><span class="rate three"><span></span><span></span><span></span></span></td>
+        </tr>
+
+        <tr class="read">
+          <td>Eclipse Doppio</td>
+          <td>Barista Marcus</td>
+          <td><span class="category-tag">Espresso</span></td>
+          <td><span class="status">Available</span></td>
+          <td><span class="rate two"><span></span><span></span><span></span></span></td>
+        </tr>
+
+        <!-- Lattes -->
+        <tr class="read">
+          <td>Lunar Latte</td>
+          <td>Barista Luna</td>
+          <td><span class="category-tag">Latte</span></td>
+          <td><span class="status">Available</span></td>
+          <td><span class="rate three"><span></span><span></span><span></span></span></td>
+        </tr>
+
+        <tr class="read">
+          <td>Stalactite Vanilla Latte</td>
+          <td>Barista Luna</td>
+          <td><span class="category-tag">Latte</span></td>
+          <td><span class="status">Available</span></td>
+          <td><span class="rate two"><span></span><span></span><span></span></span></td>
+        </tr>
+
+        <tr class="to-read">
+          <td>Obsidian Oat Latte</td>
+          <td>Barista Nyx</td>
+          <td><span class="category-tag">Latte</span></td>
+          <td><span class="status">Coming Soon</span></td>
+          <td><span class="rate one"><span></span><span></span><span></span></span></td>
+        </tr>
+
+        <!-- Mochas -->
+        <tr class="read">
+          <td>Eclipse Mocha</td>
+          <td>Barista Nyx</td>
+          <td><span class="category-tag">Mocha</span></td>
+          <td><span class="status">Available</span></td>
+          <td><span class="rate three"><span></span><span></span><span></span></span></td>
+        </tr>
+
+        <tr class="read">
+          <td>Dark Matter Mocha</td>
+          <td>Barista Vesper</td>
+          <td><span class="category-tag">Mocha</span></td>
+          <td><span class="status">Available</span></td>
+          <td><span class="rate two"><span></span><span></span><span></span></span></td>
+        </tr>
+
+        <!-- Cold Brew -->
+        <tr class="read">
+          <td>Guano Cold Brew</td>
+          <td>Barista Marcus</td>
+          <td><span class="category-tag">Cold Brew</span></td>
+          <td><span class="status">Available</span></td>
+          <td><span class="rate two"><span></span><span></span><span></span></span></td>
+        </tr>
+
+        <tr class="to-read">
+          <td>Midnight Nitro Cold Brew</td>
+          <td>Barista Marcus</td>
+          <td><span class="category-tag">Cold Brew</span></td>
+          <td><span class="status">Coming Soon</span></td>
+          <td><span class="rate one"><span></span><span></span><span></span></span></td>
+        </tr>
+
+        <!-- Tea -->
+        <tr class="read">
+          <td>Bat Wing Tea</td>
+          <td>Barista Vesper</td>
+          <td><span class="category-tag">Herbal Tea</span></td>
+          <td><span class="status">Available</span></td>
+          <td><span class="rate two"><span></span><span></span><span></span></span></td>
+        </tr>
+
+        <tr class="read">
+          <td>Cave Moss Matcha</td>
+          <td>Barista Luna</td>
+          <td><span class="category-tag">Matcha</span></td>
+          <td><span class="status">Available</span></td>
+          <td><span class="rate three"><span></span><span></span><span></span></span></td>
+        </tr>
+
+        <tr class="to-read">
+          <td>Ember Chai</td>
+          <td>Barista Vesper</td>
+          <td><span class="category-tag">Chai</span></td>
+          <td><span class="status">Coming Soon</span></td>
+          <td><span class="rate one"><span></span><span></span><span></span></span></td>
+        </tr>
+
+        <!-- Seasonal -->
+        <tr class="to-read">
+          <td>Harvest Moon Cider</td>
+          <td>Barista Luna</td>
+          <td><span class="category-tag">Seasonal</span></td>
+          <td><span class="status">Coming Soon</span></td>
+          <td><span class="rate one"><span></span><span></span><span></span></span></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </main>
+
+  <div data-include="components/footer.html"></div>
+  <script src="../scripts/HTMLInclude.min.js"></script>
 </body>
 </html>
