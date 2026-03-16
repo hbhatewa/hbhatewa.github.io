@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soccer – Hobby Site</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d1b2a;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #1a3a1a;
+      border-bottom: 4px solid #4caf50;
+      padding: 1.5rem 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: #4caf50;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem;
+      align-items: center;
+    }
+
+    nav a {
+      color: #c8f5c8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      background-color: #4caf50;
+      color: #0d1b2a;
+    }
+
+    .divider {
+      color: #4caf50;
+      font-size: 1.1rem;
+      user-select: none;
+    }
+
+    main {
+      flex: 1;
+      max-width: 960px;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: #4caf50;
+      border-left: 6px solid #4caf50;
+      padding-left: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      line-height: 1.75;
+      margin-bottom: 1.2rem;
+      color: #d4d4d4;
+    }
+
+    figure {
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+
+    figure img {
+      max-width: 100%;
+      height: auto;
+      border: 3px solid #4caf50;
+      border-radius: 8px;
+    }
+
+    figcaption {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #a5d6a7;
+      font-style: normal;
+    }
+
+    .img-source {
+      font-style: italic;
+      font-size: 0.85rem;
+      color: #81c784;
+      margin-top: 0.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+    }
+
+    th {
+      background-color: #1a3a1a;
+      color: #4caf50;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border: 1px solid #2e5c2e;
+    }
+
+    td {
+      padding: 0.65rem 1rem;
+      border: 1px solid #2e5c2e;
+      color: #d4d4d4;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #122612;
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1.2rem;
+      color: #d4d4d4;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    form {
+      background-color: #122612;
+      border: 1px solid #2e5c2e;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: #a5d6a7;
+      font-weight: 600;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #4caf50;
+      border-radius: 4px;
+      background-color: #0d1b2a;
+      color: #e0e0e0;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    form button {
+      background-color: #4caf50;
+      color: #0d1b2a;
+      border: none;
+      padding: 0.6rem 1.5rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    form button:hover {
+      background-color: #388e3c;
+      color: #fff;
+    }
+
+
+    .prompt-block {
+      background-color: #122612;
+      border-left: 4px solid #4caf50;
+      border-radius: 4px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .prompt-block h3 {
+      color: #4caf50;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .prompt-block p {
+      font-size: 0.9rem;
+      font-family: monospace;
+      color: #c8f5c8;
+      margin: 0;
+    }
+
+    footer {
+      background-color: #1a3a1a;
+      border-top: 4px solid #4caf50;
+      text-align: center;
+      padding: 1.25rem 1rem;
+    }
+
+    footer p {
+      margin-bottom: 0.75rem;
+      color: #a5d6a7;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #4caf50;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .validation-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .validation-links a {
+      font-size: 0.85rem;
+      background-color: #0d1b2a;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid #4caf50;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+
+    .validation-links a:hover {
+      background-color: #4caf50;
+      color: #0d1b2a;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Soccer</h1>
+  <nav>
+    <a href="#" class="active" onclick="showSection('what', this)">What</a>
+    <span class="divider">⚽</span>
+    <a href="#" onclick="showSection('who', this)">Who</a>
+    <span class="divider">⚽</span>
+    <a href="#" onclick="showSection('when', this)">When</a>
+    <span class="divider">⚽</span>
+    <a href="#" onclick="showSection('where', this)">Where</a>
+    <span class="divider">⚽</span>
+    <a href="#" onclick="showSection('how', this)">How</a>
+    <span class="divider">⚽</span>
+    <a href="#" onclick="showSection('why', this)">Why</a>
+    <span class="divider">⚽</span>
+    <a href="#" onclick="showSection('ai', this)">AI Prompts</a>
+  </nav>
+</header>
+
+<main>
+
+  <section id="what" class="active">
+    <h2>What Is Soccer?</h2>
+    <p>
+      Soccer — known as football in most of the world — is the most popular sport on the planet,
+      played by over 250 million people across more than 200 countries. The game is simple at its core:
+      two teams of eleven players attempt to score by getting a ball into the opposing team's goal,
+      using any part of the body except the arms and hands (goalkeepers aside). Yet within that
+      simplicity lies an almost infinite depth of skill, strategy, and teamwork.
+    </p>
+    <p>
+      A standard match consists of two 45-minute halves played on a rectangular grass or artificial
+      turf field. Teams earn three points for a win, one for a draw, and none for a loss in most
+      league formats. From local parks to sold-out stadiums holding 100,000 fans, soccer transcends
+      culture, language, and borders like no other sport.
+    </p>
+    <figure>
+      <img src="images/what-soccer.jpg" alt="Soccer balls resting on a green pitch." width="800" />
+      <figcaption>Soccer balls resting on a green pitch.</figcaption>
+    </figure>
+    <p class="img-source">Image source: <a href="https://unsplash.com" target="_blank">Unsplash.com</a> — free to use under the Unsplash License.</p>
+    <table>
+      <caption>Soccer Quick Facts</caption>
+      <tr><th>Fact</th><th>Detail</th></tr>
+      <tr><td>Players per team</td><td>11 (including goalkeeper)</td></tr>
+      <tr><td>Match duration</td><td>90 minutes (two 45-min halves)</td></tr>
+      <tr><td>Governing body</td><td>FIFA (Fédération Internationale de Football Association)</td></tr>
+      <tr><td>Ball circumference</td><td>68–70 cm (size 5, professional)</td></tr>
+      <tr><td>Field dimensions</td><td>100–110 m × 64–75 m</td></tr>
+      <tr><td>Global players</td><td>~265 million registered players</td></tr>
+    </table>
+  </section>
+
+  <section id="who">
+    <h2>Who Plays Soccer?</h2>
+    <p>
+      Soccer is truly universal — played and watched by people of every age, gender, and background.
+      At the professional level, leagues like the English Premier League, La Liga, Serie A, and MLS
+      attract billions of viewers worldwide. Legends like Pelé, Diego Maradona, Lionel Messi, and
+      Cristiano Ronaldo have become global cultural icons, inspiring entire generations to pick up
+      the sport.
+    </p>
+    <figure>
+      <img src="images/who-players.jpg" alt="Soccer players after a corner kick." width="800" />
+      <figcaption>Soccer players from around the world, united by the love of the game.</figcaption>
+    </figure>
+    <p class="img-source">Image source: <a href="https://unsplash.com" target="_blank">Unsplash.com</a> — free to use under the Unsplash License.</p>
+    <p>
+      Beyond professionals, soccer is played by millions of amateurs in recreational leagues, school
+      teams, and pickup games in streets and parks. Women's soccer has seen explosive growth — the
+      FIFA Women's World Cup now draws record audiences, with stars like Megan Rapinoe, Sam Kerr,
+      and Alex Morgan elevating the sport globally.
+    </p>
+    <table>
+      <caption>Notable Soccer Legends</caption>
+      <tr><th>Player</th><th>Country</th><th>Known For</th></tr>
+      <tr><td>Pelé</td><td>Brazil</td><td>3× World Cup winner, 1,000+ career goals</td></tr>
+      <tr><td>Diego Maradona</td><td>Argentina</td><td>1986 World Cup, "Hand of God" goal</td></tr>
+      <tr><td>Lionel Messi</td><td>Argentina</td><td>8× Ballon d'Or, 2022 World Cup winner</td></tr>
+      <tr><td>Cristiano Ronaldo</td><td>Portugal</td><td>5× Ballon d'Or, all-time top scorer</td></tr>
+      <tr><td>Megan Rapinoe</td><td>USA</td><td>2× Women's World Cup winner</td></tr>
+    </table>
+  </section>
+
+  <section id="when">
+    <h2>When to Play Soccer</h2>
+    <p>
+      Soccer can be played year-round, making it one of the most accessible sports in the world.
+      In most countries, the professional club season runs from August through May, with
+      international tournaments like the FIFA World Cup and UEFA European Championship taking place
+      during summer breaks. In the United States, MLS runs from February to November.
+    </p>
+    <figure>
+      <img src="images/when-season.jpg" alt="Kids playing soccer in rainy conditions." width="800" />
+      <figcaption>Soccer is played in all seasons — rain, shine, or snow.</figcaption>
+    </figure>
+    <p class="img-source">Image source: <a href="https://unsplash.com" target="_blank">Unsplash.com</a> — free to use under the Unsplash License.</p>
+    <table>
+      <caption>Soccer Season Calendar</caption>
+      <tr><th>Season / Event</th><th>Months</th><th>Best Condition</th></tr>
+      <tr><td>Spring Recreational Season</td><td>March – May</td><td>Mild weather, soft ground</td></tr>
+      <tr><td>Summer Tournaments</td><td>June – August</td><td>Dry, fast pitches</td></tr>
+      <tr><td>Fall Club Season</td><td>August – November</td><td>Cool temps, ideal for running</td></tr>
+      <tr><td>Winter Indoor Soccer</td><td>December – February</td><td>Heated indoor facilities</td></tr>
+      <tr><td>FIFA World Cup</td><td>Every 4 years (June–July)</td><td>Varies by host country</td></tr>
+    </table>
+    <p>
+      For recreational players, the best time to play outdoors is during spring and fall when
+      temperatures are mild. Early morning or evening sessions during summer help avoid heat
+      exhaustion. Many communities offer indoor leagues during winter months so players never
+      have to take a long break from the game.
+    </p>
+  </section>
+
+  <section id="where">
+    <h2>Where Soccer Is Played</h2>
+    <p>
+      One of soccer's greatest strengths is that it requires very little infrastructure to play.
+      A ball and any open space — a street, a beach, a park — is enough. However, at the highest
+      levels, the sport is played in some of the world's most iconic stadiums, from Camp Nou in
+      Barcelona to Wembley Stadium in London and the Maracanã in Rio de Janeiro.
+    </p>
+    <figure>
+      <img src="images/where-stadium.jpg" alt="Crowd view of a packed soccer stadium at night with floodlights" width="800" />
+      <figcaption>A packed stadium at night — the electrifying home of professional soccer.</figcaption>
+    </figure>
+    <p class="img-source">Image source: <a href="https://unsplash.com" target="_blank">Unsplash.com</a> — free to use under the Unsplash License.</p>
+    <table>
+      <caption>Famous Soccer Venues Around the World</caption>
+      <tr><th>Stadium</th><th>Location</th><th>Capacity</th></tr>
+      <tr><td>Rungrado 1st of May Stadium</td><td>Pyongyang, North Korea</td><td>114,000</td></tr>
+      <tr><td>Camp Nou</td><td>Barcelona, Spain</td><td>99,354</td></tr>
+      <tr><td>Wembley Stadium</td><td>London, England</td><td>90,000</td></tr>
+      <tr><td>Maracanã</td><td>Rio de Janeiro, Brazil</td><td>78,838</td></tr>
+      <tr><td>Estadio Azteca</td><td>Mexico City, Mexico</td><td>87,523</td></tr>
+    </table>
+    <p>
+      Locally, soccer is played in public parks, school fields, indoor futsal courts, and
+      community recreational centers. Charlotte, NC has a growing soccer scene with facilities
+      like the Charlotte Independence soccer complex and the new Bank of America Stadium hosting
+      MLS matches for Charlotte FC.
+    </p>
+  </section>
+
+  <section id="how">
+    <h2>How to Play Soccer</h2>
+    <p>
+      Learning soccer starts with mastering a few fundamental skills: dribbling (moving the ball
+      with your feet while running), passing (sending the ball accurately to a teammate), shooting
+      (striking the ball toward the goal), and defending (preventing the opposition from scoring).
+      These core skills can be practiced alone or with others, and improve dramatically with
+      consistent repetition.
+    </p>
+    <figure>
+      <img src="images/how-skills.jpg" alt="A soccer player practicing dribbling through green cones on a training field" width="800" />
+      <figcaption>Cone drills are one of the best ways to sharpen your dribbling and footwork.</figcaption>
+    </figure>
+    <p class="img-source">Image source: <a href="https://unsplash.com" target="_blank">Unsplash.com</a> — free to use under the Unsplash License.</p>
+    <ol>
+      <li><strong>Warm Up:</strong> Always start with a 5–10 minute dynamic warm-up — jogging, high knees, and leg swings to prevent injury.</li>
+      <li><strong>Passing Drills:</strong> Practice short and long passes with a partner, focusing on inside-foot accuracy.</li>
+      <li><strong>Dribbling Cones:</strong> Set up a cone slalom and practice weaving through at increasing speeds.</li>
+      <li><strong>Shooting Practice:</strong> Take shots from different angles and distances — aim for corners of the goal.</li>
+      <li><strong>Small-Sided Games:</strong> Play 3v3 or 5v5 matches to apply skills in a game-like setting.</li>
+      <li><strong>Cool Down & Stretch:</strong> End every session with static stretches for hamstrings, quads, and calves.</li>
+    </ol>
+    <form>
+      <p><strong>⚽ Find Your Position Quiz</strong></p>
+      <label for="speed">How would you rate your speed?</label>
+      <select id="speed" name="speed">
+        <option value="">-- Select --</option>
+        <option value="fast">Very Fast</option>
+        <option value="average">Average</option>
+        <option value="slow">Prefer Strategy Over Speed</option>
+      </select>
+      <label for="skill">Best skill:</label>
+      <select id="skill" name="skill">
+        <option value="">-- Select --</option>
+        <option value="shooting">Shooting &amp; Scoring</option>
+        <option value="passing">Passing &amp; Vision</option>
+        <option value="defending">Tackling &amp; Defending</option>
+        <option value="goalkeeping">Reflexes &amp; Goalkeeping</option>
+      </select>
+      <label for="name">Your name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" />
+      <button type="button">Find My Position!</button>
+    </form>
+  </section>
+
+  <section id="why">
+    <h2>Why Soccer Is Worth It</h2>
+    <p>
+      Soccer offers far more than just athletic exercise — it builds character, community, and
+      mental resilience. The physical benefits alone are substantial: a typical player runs
+      7–9 miles per match, improving cardiovascular fitness, agility, and coordination. But the
+      mental and social rewards are equally powerful. Soccer teaches teamwork, communication,
+      how to handle pressure, and how to bounce back from failure.
+    </p>
+    <figure>
+      <img src="images/why-community.jpg" alt="A women's soccer team joyfully celebrating on the field." width="800" />
+      <figcaption>Few feelings match the joy of celebrating a goal with your team.</figcaption>
+    </figure>
+    <p class="img-source">Image source: <a href="https://unsplash.com" target="_blank">Unsplash.com</a> — free to use under the Unsplash License.</p>
+    <p>
+      Soccer also provides a global community. No matter where you travel in the world, you can
+      find a pickup game and instantly connect with strangers through a shared love of the sport.
+      This cultural universality makes soccer uniquely powerful as a vehicle for friendship,
+      diplomacy, and social change.
+    </p>
+    <table>
+      <caption>Benefits of Playing Soccer</caption>
+      <tr><th>Benefit</th><th>Description</th></tr>
+      <tr><td>Cardiovascular Health</td><td>Running 7–9 miles per game strengthens the heart and lungs</td></tr>
+      <tr><td>Teamwork</td><td>Requires constant communication and collaboration with teammates</td></tr>
+      <tr><td>Mental Agility</td><td>Fast decision-making under pressure sharpens the mind</td></tr>
+      <tr><td>Social Bonds</td><td>Creates lifelong friendships across cultures</td></tr>
+      <tr><td>Discipline</td><td>Regular training builds time management and dedication</td></tr>
+    </table>
+  </section>
+
+  <section id="ai">
+    <h2>AI Prompts Used</h2>
+    <p>
+      This website was built with the assistance of <strong>Perplexity AI</strong>. Below are all
+      the prompts used to generate the code, content, and images for this hobby site.
+    </p>
+
+    <div class="prompt-block">
+      <h3>Prompt 1 – Full Page Generation</h3>
+      <p>"Help me build a multi-page hobby site as a single HTML file for my ITIS 3135 midterm. The hobby is soccer. Requirements: embedded CSS, JS section switching, header with h1 and nav, 7 sections (What, Who, When, Where, How, Why, AI Prompts), at least 3 items per section including a figure with figcaption and AI prompt paragraph, a table, CRAP design principles, dark green and dark blue color scheme, footer with design firm link and HTML/CSS/accessibility validation links, no Times New Roman, no white background, no plain black text, no generic blue links."</p>
+    </div>
+
+    <div class="prompt-block">
+      <h3> Images </h3>
+      <p>No AI images were used for this section. All images sourced from Unsplash.com.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Designed by <a href="http://harshbhatewaraenterprise.com/" target="_blank">Harsh Bhatewara Enterprise</a></p>
+  <div class="validation-links">
+    <a href="https://validator.w3.org/nu/?doc=https://webpages.charlotte.edu/801410002/itis3135/hobby/" target="_blank">Validate HTML</a>
+    <a href="https://jigsaw.w3.org/css-validator/validator?uri=https://webpages.charlotte.edu/801410002/itis3135/hobby/" target="_blank">Validate CSS</a>
+    <a href="https://wave.webaim.org/report#/https://webpages.charlotte.edu/801410002/itis3135/hobby/" target="_blank">Accessibility Check</a>
+  </div>
+</footer>
+
+<script>
+  function showSection(id, clickedLink) {
+    var sections = document.querySelectorAll('main section');
+    sections.forEach(function(sec) {
+      sec.classList.remove('active');
+    });
+    var links = document.querySelectorAll('nav a');
+    links.forEach(function(link) {
+      link.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+    clickedLink.classList.add('active');
+    return false;
+  }
+</script>
+
+</body>
+</html>
