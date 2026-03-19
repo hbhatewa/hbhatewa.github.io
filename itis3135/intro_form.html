@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction Form | Harsh Bhatewara's Humble Bat ~ ITIS 3135</title>
+  <link rel="stylesheet" href="styles/default.css">
+</head>
+<body>
+  <div data-include="components/header.html"></div>
+
+  <main>
+    <h2>Introduction Form</h2>
+    <h3>Please submit the form below.</h3>
+
+    <form id="form">
+
+    <label for="first-name">First Name:</label>
+    <input type="text" id="first-name" name="first_name" value="Harsh" placeholder="First Name" required>
+
+    <label for="middle-name">Middle Name (optional):</label>
+    <input type="text" id="middle-name" name="middle_name" value="" placeholder="Middle Name or Initial">
+
+    <label for="nickname">Nickname/Preferred Name (optional):</label>
+    <input type="text" id="nickname" name="nickname" value="" placeholder="Nickname">
+
+    <label for="last-name">Last Name:</label>
+    <input type="text" id="last-name" name="last_name" value="Bhatewara" placeholder="Last Name" required>
+
+    <label for="mascot-adj">Mascot Adjective:</label>
+    <input type="text" id="mascot-adj" name="mascot_adjective" value="Humble" placeholder="Mascot Adjective" required>
+
+    <label for="mascot-animal">Mascot Animal:</label>
+    <input type="text" id="mascot-animal" name="mascot_animal" value="Bat" placeholder="Mascot Animal" required>
+
+    <label for="divider">Divider:</label>
+    <input type="text" id="divider" name="divider" value="~" placeholder="~ or |" required>
+
+    <label for="picture">Profile Picture:</label>
+    <input type="file" id="picture" name="picture" data-default="../images/bat.jpg">
+
+    <label for="pic-caption">Picture Caption:</label>
+    <input type="text" id="pic-caption" name="pic_caption" value="Harsh Bhatewara | Humble Bat" placeholder="Picture Caption" required>
+
+    <label for="ack-statement">Acknowledgment Statement:</label>
+    <input type="text" id="ack-statement" name="ack_statement" value="I understand that the information on this page is publicly available on the web, and I will not include anything I do not want the public to see." placeholder="Acknowledgment Statement" required>
+
+    <label for="ack-date">Acknowledgment Date:</label>
+    <input type="date" id="ack-date" name="ack_date" value="2026-01-18" required>
+
+    <label for="personal-statement">Personal Statement:</label>
+    <textarea id="personal-statement" name="personal_statement" placeholder="Write your personal statement here..." required>I am a junior at UNC Charlotte studying Computer Science with a concentration in Cybersecurity. I am excited to learn more about front-end development and how it connects design with functionality.</textarea>
+
+    <label for="personal-bg">Personal Background:</label>
+    <input type="text" id="personal-bg" name="personal_background" value="I am 19 years old and enjoy playing sports, trying new food, and spending time with friends." placeholder="Personal Background" required>
+
+    <label for="professional-bg">Professional Background:</label>
+    <input type="text" id="professional-bg" name="professional_background" value="I do not yet have professional experience in this field." placeholder="Professional Background" required>
+
+    <label for="academic-bg">Academic Background:</label>
+    <input type="text" id="academic-bg" name="academic_background" value="Currently a junior by credit standing at UNC Charlotte." placeholder="Academic Background" required>
+
+    <label for="subject-bg">Background in Subject:</label>
+    <input type="text" id="subject-bg" name="subject_background" value="Limited experience with front-end work, but I have used HTML previously." placeholder="Background in Subject" required>
+
+    <label for="primary-computer">Primary Work Computer:</label>
+    <input type="text" id="primary-computer" name="primary_computer" value="Lenovo Slim 7i" placeholder="Primary Computer" required>
+
+    <label for="backup-computer">Backup Work Computer:</label>
+    <input type="text" id="backup-computer" name="backup_computer" value="Loaned laptops from Atkins Library." placeholder="Backup Computer" required>
+    
+    <label for="fun-fact">Fun Fact (optional):</label>
+    <input type="text" id="fun-fact" name="fun_fact" value="I was born prematurely." placeholder="Fun Fact">
+
+    <label for="additional-info">Something I Would Like to Share (optional):</label>
+    <input type="text" id="additional-info" name="additional_info" value="I was born in India." placeholder="Something to share">
+
+
+    <label>Current Courses:</label>
+    <div id="courses-container">
+    <div class="course">
+      <input type="text" name="course_dept" value="ITSC" placeholder="Department" required>
+      <input type="text" name="course_num" value="3688" placeholder="Number" required>
+      <input type="text" name="course_name" value="Computers and Their Impact on Society (Honors)" placeholder="Course Name" required>
+      <input type="text" name="course_reason" value="Required course for my degree." placeholder="Reason for taking" required>
+    </div>
+    </div>
+
+    <label for="quote">Quote:</label>
+    <input type="text" id="quote" name="quote" value="“Nah, imma do my own thing.”" placeholder="A quote you like" required>
+
+    <label for="quote-author">Quote Author:</label>
+    <input type="text" id="quote-author" name="quote_author" value="Miles Morales" placeholder="Who said it" required>
+
+    <label>Links:</label>
+    <input type="text" name="link_name_1" value="GitHub" placeholder="Link 1 Name" required>
+    <input type="url" name="link_url_1" value="https://github.com/hbhatewa" placeholder="Link 1 URL" required>
+
+    <input type="text" name="link_name_2" value="CLT Web" placeholder="Link 2 Name" required>
+    <input type="url" name="link_url_2" value="https://webpages.charlotte.edu/hbhatewa/" placeholder="Link 2 URL" required>
+
+    <input type="text" name="link_name_3" value="GitHub.io" placeholder="Link 3 Name" required>
+    <input type="url" name="link_url_3" value="https://hbhatewa.github.io/" placeholder="Link 3 URL" required>
+
+    <input type="text" name="link_name_4" value="freeCodeCamp" placeholder="Link 4 Name" required>
+    <input type="url" name="link_url_4" value="https://www.freecodecamp.org/hbhatewa" placeholder="Link 4 URL" required>
+
+    <input type="text" name="link_name_5" value="LinkedIn" placeholder="Link 5 Name" required>
+    <input type="url" name="link_url_5" value="https://www.linkedin.com/in/harsh-bhatewara-57bb9b286/" placeholder="Link 5 URL" required>
+
+    <button type="button" id="add-course">Add Course</button>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+    <button type="button" id="clear-btn">Clear</button>
+    <button type="button" id="generate-html-btn">Generate HTML</button>
+    <button type="button" id="generate-json-btn">Generate JSON</button>
+
+
+
+
+    </form>
+
+
+  </main>
+
+  <div data-include="components/footer.html"></div>
+  <script src="../scripts/HTMLInclude.min.js"></script>
+  <script src="scripts/introduction.js"></script>
+  <script src="scripts/generate_html.js"></script>
+  <script src="scripts/generate_json.js"></script>
+
+
+</body>
+
+</html>
