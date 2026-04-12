@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phi Alpha Delta at UNC Charlotte - Contact</title>
+  <link rel="stylesheet" href="styles/default.css">
+  <style>
+        .hello-banner {
+            background: linear-gradient(135deg, #6a1b9a 0%, #9c27b0 55%, #f9a825 100%);
+            color: white;
+            border-radius: 22px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hello-banner::before,
+        .hello-banner::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.12);
+        }
+
+        .hello-banner::before {
+            width: 180px;
+            height: 180px;
+            top: -60px;
+            left: -40px;
+        }
+
+        .hello-banner::after {
+            width: 220px;
+            height: 220px;
+            bottom: -100px;
+            right: -60px;
+        }
+
+        .hello-banner h2 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hello-banner p {
+            max-width: 760px;
+            margin: 0 auto 1rem;
+            font-size: 1.15rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hello-banner p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-stage {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        .person-card {
+            background: white;
+            border-radius: 22px;
+            padding: 2rem;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .person-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, #6a1b9a, #f9a825, #2e7d32);
+        }
+
+.contact-bubble {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 4px solid #f9a825;
+    box-shadow: 0 8px 20px rgba(249,168,37,0.3);
+    background: #fff;
+    flex-shrink: 0;
+}
+
+.contact-bubble img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    display: block;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+        .person-card h3 {
+    margin-bottom: 0.75rem;
+    font-size: 2.2rem;
+}
+
+.person-card .role {
+    color: #6a1b9a;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+}
+
+.contact-line {
+    margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.contact-line strong {
+    color: #2e7d32;
+    font-size: 1.15rem;
+}
+
+        .contact-line a {
+            color: #6a1b9a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-line a:hover {
+            text-decoration: underline;
+        }
+
+        .reachout-panel {
+            background: linear-gradient(135deg, rgba(46,125,50,0.08), rgba(249,168,37,0.14));
+            border-radius: 22px;
+            padding: 2rem;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+        }
+
+        .reachout-panel h3 {
+            margin-bottom: 1rem;
+            font-size: 1.7rem;
+        }
+
+        .reachout-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .reachout-item {
+            background: white;
+            border-radius: 16px;
+            padding: 1.2rem 1.25rem;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .reachout-item:hover {
+            transform: translateY(-4px) rotate(-0.5deg);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+        }
+
+        .reachout-item h4 {
+            margin-bottom: 0.5rem;
+            color: #6a1b9a;
+        }
+
+        .reachout-item p {
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
+        .email-cta {
+            text-align: center;
+            background: #1f1f1f;
+            color: white;
+            border-radius: 22px;
+            padding: 2.5rem 2rem;
+        }
+
+        .email-cta h2 {
+            color: #f9a825;
+            margin-bottom: 1rem;
+        }
+
+        .email-pill {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 1rem 1.5rem;
+            background: white;
+            color: #6a1b9a;
+            text-decoration: none;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .email-pill:hover {
+            background: #f9f1c8;
+        }
+
+        .small-text {
+            margin-top: 1rem;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.98rem;
+        }
+
+        @media (max-width: 900px) {
+            .contact-stage {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hello-banner {
+                padding: 2.25rem 1.5rem;
+            }
+
+            .hello-banner h2 {
+                font-size: 2.2rem;
+            }
+
+            .person-card,
+            .reachout-panel,
+            .email-cta {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+  <div data-include="components/header.html"></div>
+  
+   <main>
+        <section class="hello-banner">
+            <h2>Hello!</h2>
+            <p>
+                Interested in Phi Alpha Delta at UNC Charlotte? Whether you are curious about joining, attending an event, or just learning more about pre-law life, we would love to hear from you.
+            </p>
+            <p>
+                You do not have to have everything figured out already — reaching out is a great first step.
+            </p>
+        </section>
+
+        <section class="contact-stage">
+            <div class="person-card">
+                <div class="contact-bubble">
+                    <img src="images/OjasiContactphotojpg.jpg" alt="Chapter contact">
+                </div>
+                <h3>Ojasi Niphadkar</h3>
+                <p class="role">Chapter Contact</p>
+
+                <div class="contact-line">
+                    <strong>Email:</strong>
+                    <a href="mailto:oniphadk@charlotte.edu">oniphadk@charlotte.edu</a>
+                </div>
+
+                <div class="contact-line">
+                    <strong>Best for:</strong> Membership questions, event info, and general chapter questions
+                </div>
+
+
+            </div>
+
+            <div class="reachout-panel">
+                <h3>What can you reach out about?</h3>
+
+                <div class="reachout-grid">
+                    <div class="reachout-item">
+                        <h4>Joining PAD</h4>
+                        <p>Ask about membership, who can join, and how to get involved.</p>
+                    </div>
+
+                    <div class="reachout-item">
+                        <h4>Upcoming Events</h4>
+                        <p>Learn about meetings, guest speakers, and other chapter activities.</p>
+                    </div>
+
+                    <div class="reachout-item">
+                        <h4>Pre-Law Questions</h4>
+                        <p>Reach out if you are exploring the legal field and want a starting point.</p>
+                    </div>
+
+                    <div class="reachout-item">
+                        <h4>General Information</h4>
+                        <p>If you are not sure where your question fits, just send a message anyway.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="email-cta">
+            <h2>Ready to Reach Out?</h2>
+            <p>
+                Send an email and introduce yourself. We are always happy to connect with students who want to learn more about Phi Alpha Delta at Charlotte.
+            </p>
+
+            <a class="email-pill" href="mailto:oniphadk@charlotte.edu">
+                Email Us Here
+            </a>
+
+            <p class="small-text">
+                We look forward to hearing from you!
+            </p>
+
+        </section>
+    </main>
+  
+  <div data-include="components/footer.html"></div>
+  <script src="../scripts/HTMLInclude.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phi Alpha Delta at UNC Charlotte - About</title>
+  <link rel="stylesheet" href="styles/default.css">
+  <style>
+        .about-intro {
+            text-align: center;
+        }
+
+        .about-intro img {
+            max-width: 220px;
+            margin: 1.5rem auto;
+            display: block;
+        }
+
+        .split-section {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .split-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .split-visual {
+            background: linear-gradient(135deg, rgba(106, 27, 154, 0.08), rgba(46, 125, 50, 0.08));
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+
+        .split-visual h3 {
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .feature-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            background: white;
+            border-radius: 14px;
+            padding: 1.75rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            border-top: 5px solid #f9a825;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-item p {
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
+        .timeline {
+            position: relative;
+            margin-top: 2rem;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #6a1b9a, #2e7d32);
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+            background: white;
+            border-radius: 14px;
+            padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -0.1rem;
+            top: 1.6rem;
+            width: 18px;
+            height: 18px;
+            background: #f9a825;
+            border: 4px solid #6a1b9a;
+            border-radius: 50%;
+        }
+
+        .timeline-item h3 {
+            margin-bottom: 0.6rem;
+            font-size: 1.25rem;
+        }
+
+        .timeline-item p {
+            margin-bottom: 0;
+        }
+
+        .cta-box {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(106, 27, 154, 0.08), rgba(249, 168, 37, 0.12));
+        }
+
+        .cta-buttons {
+            margin-top: 2rem;
+        }
+
+        .cta-buttons .btn + .btn {
+            margin-left: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            .split-section {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .timeline {
+                padding-left: 1rem;
+            }
+
+            .timeline-item {
+                padding: 1.25rem 1rem 1.25rem 2rem;
+            }
+
+            .cta-buttons .btn {
+                display: block;
+                margin: 0.75rem auto 0;
+                width: fit-content;
+            }
+
+            .cta-buttons .btn + .btn {
+                margin-left: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+  <div data-include="components/header.html"></div>
+  
+  <main>
+        <section id="about-hero" class="about-intro">
+            <h2>About Phi Alpha Delta</h2>
+            <img src="images/PADlogo.png" alt="Phi Alpha Delta logo" loading="lazy">
+            <p>
+                <strong>Phi Alpha Delta Law Fraternity, International</strong> is a professional legal organization that supports students interested in the law through education, leadership, service, and professional connection.
+            </p>
+            <p>
+                At UNC Charlotte, our chapter helps students explore legal careers, prepare for law school, and become part of a supportive pre-law community focused on growth and impact.
+            </p>
+        </section>
+
+        <section id="our-story">
+            <h2>Who We Are</h2>
+            <div class="split-section">
+                <div class="split-text">
+                    <p>
+                        Phi Alpha Delta’s pre-law program is designed to help undergraduate students make informed decisions about pursuing a legal career, selecting law schools, and preparing for law school.
+                    </p>
+                    <p>
+                        Our UNC Charlotte chapter brings that mission to campus by creating opportunities for students to learn from professionals, engage with fellow members, and develop the academic and leadership skills that matter in the legal field.
+                    </p>
+                    <p>
+                        We want members to leave our chapter more informed, more connected, and more confident about their future path.
+                    </p>
+                </div>
+
+                <div class="split-visual">
+                    <h3>What Defines Our Chapter</h3>
+                    <p><strong>Professionalism:</strong> Building habits and connections that support future legal success.</p>
+                    <p><strong>Community:</strong> Creating a space where pre-law students can grow together.</p>
+                    <p><strong>Service:</strong> Giving back while learning the responsibilities of legal leadership.</p>
+                    <p><strong>Opportunity:</strong> Opening doors to events, mentorship, and meaningful experiences.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-join">
+            <h2>Why Students Join</h2>
+            <div class="feature-row">
+                <div class="feature-item">
+                    <h3>Career Exploration</h3>
+                    <p>
+                        Learn more about the legal profession through workshops, presentations, and real conversations about law school and legal careers.
+                    </p>
+                </div>
+
+                <div class="feature-item">
+                    <h3>Professional Connections</h3>
+                    <p>
+                        Meet attorneys, alumni, and other students who can broaden your understanding of the field and help you build your network.
+                    </p>
+                </div>
+
+                <div class="feature-item">
+                    <h3>Leadership & Service</h3>
+                    <p>
+                        Strengthen your resume and your skills through chapter leadership, campus involvement, and community service opportunities.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="journey">
+            <h2>The Member Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Explore the Legal Field</h3>
+                    <p>
+                        Members begin by learning what a legal career can look like and what paths are available within the profession.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Prepare for What Comes Next</h3>
+                    <p>
+                        Students gain access to pre-law resources, educational programming, and guidance related to law school preparation and professional development.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Connect With Professionals</h3>
+                    <p>
+                        Through attorney panels, presentations, networking, and chapter events, members build relationships that deepen their understanding of the legal world.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Grow Through Involvement</h3>
+                    <p>
+                        Chapter participation offers leadership development, teamwork, and practical experience through planning, service, and member engagement.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Build Lifelong Connections</h3>
+                    <p>
+                        PAD is more than a campus organization — it is a professional network that can continue supporting members beyond undergraduate study.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="cta-box">
+            <h2>Become Part of Our Chapter</h2>
+            <p>
+                Whether you are just beginning to explore the law or already planning for law school, Phi Alpha Delta offers a place to learn, lead, serve, and connect.
+            </p>
+            <div class="cta-buttons">
+                <a href="events.html" class="btn">View Events</a>
+                <a href="contact.html" class="btn">Contact Us</a>
+            </div>
+        </section>
+    </main>
+  
+  <div data-include="components/footer.html"></div>
+  <script src="../scripts/HTMLInclude.min.js"></script>
+</body>
+</html>

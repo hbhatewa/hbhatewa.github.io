@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phi Alpha Delta at UNC Charlotte - About</title>
+  <link rel="stylesheet" href="styles/default.css">
+  <style>
+        .charlotte-hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        .hero-copy {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-copy h2 {
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-panel {
+            background: linear-gradient(135deg, #6a1b9a, #2e7d32);
+            color: white;
+            border-radius: 18px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-panel h3 {
+            color: #f9a825;
+            margin-bottom: 1rem;
+        }
+
+        .hero-panel p {
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 1rem;
+        }
+
+        .hero-panel p:last-child {
+            margin-bottom: 0;
+        }
+
+        .membership-band {
+            background: linear-gradient(90deg, rgba(249,168,37,0.18), rgba(106,27,154,0.08));
+            border: 2px solid rgba(249,168,37,0.35);
+            border-radius: 18px;
+            padding: 2.25rem;
+            text-align: center;
+        }
+
+        .membership-band h2 {
+            margin-bottom: 1rem;
+        }
+
+        .membership-band p {
+            max-width: 850px;
+            margin: 0 auto 1rem;
+        }
+
+        .benefits-steps {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 1.5rem;
+            align-items: start;
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+
+        .benefit-number {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f9a825, #ffca28);
+            color: #2e7d32;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(249,168,37,0.35);
+        }
+
+        .benefit-content h3 {
+            margin-bottom: 0.6rem;
+        }
+
+        .benefit-content p {
+            margin-bottom: 0;
+        }
+
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .journey-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.75rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .journey-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #6a1b9a, #f9a825, #2e7d32);
+        }
+
+        .journey-card h3 {
+            margin-top: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .journey-card p {
+            margin-bottom: 0;
+        }
+
+        .cta-split {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(106,27,154,0.08), rgba(46,125,50,0.08));
+            border-radius: 18px;
+        }
+
+        .cta-actions .btn + .btn {
+            margin-left: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            .charlotte-hero,
+            .cta-split,
+            .journey-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .benefit-step {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .benefit-number {
+                margin: 0 auto;
+            }
+
+            .cta-actions .btn {
+                display: block;
+                width: fit-content;
+                margin: 0.75rem auto 0;
+            }
+
+            .cta-actions .btn + .btn {
+                margin-left: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+  <div data-include="components/header.html"></div>
+  
+  <main>
+        <section class="charlotte-hero">
+            <div class="hero-copy">
+                <h2>Phi Alpha Delta at Charlotte</h2>
+                <p>
+                    The path to law school can feel overwhelming, especially when students are trying to figure out applications, professional expectations, and career goals on their own.
+                </p>
+                <p>
+                    At UNC Charlotte, Phi Alpha Delta creates a home for pre-law students who want guidance, community, and meaningful opportunities as they prepare for the future.
+                </p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnnEbpHCgGaiLCRMLs2PBwqCeurXLk3aQ9BNsPDd6yH0b33A/viewform" class="btn">Join Our Chapter</a>
+                </div>
+            </div>
+
+            <div class="hero-panel">
+                <h3>Built for Niners</h3>
+                <p>Freshmen exploring the legal field can find direction early.</p>
+                <p>Seniors preparing applications can find support and connection.</p>
+                <p>Students of all majors can build community through a shared interest in law.</p>
+            </div>
+        </section>
+
+        <section class="membership-band">
+            <h2>Open Membership, Real Opportunity</h2>
+            <p>
+                Phi Alpha Delta at Charlotte believes students should not have to compete for the chance to grow professionally. If you are interested in the law and in good standing with the University, there is a place for you here.
+            </p>
+            <p>
+                There is no cut process and no exclusive rush model. We focus on ambition, commitment, and creating access for students who want to explore the legal profession.
+            </p>
+        </section>
+
+        <section id="benefits">
+            <h2>What Members Gain</h2>
+            <div class="benefits-steps">
+                <div class="benefit-step">
+                    <div class="benefit-number">01</div>
+                    <div class="benefit-content">
+                        <h3>LSAT Support</h3>
+                        <p>
+                            Members can access valuable law-school-prep resources and discounts from major LSAT prep providers, helping make preparation more affordable and practical.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="benefit-step">
+                    <div class="benefit-number">02</div>
+                    <div class="benefit-content">
+                        <h3>A Larger Network</h3>
+                        <p>
+                            Joining PAD means becoming part of a wide professional network that includes alumni, attorneys, judges, and legal professionals across many stages of the field.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="benefit-step">
+                    <div class="benefit-number">03</div>
+                    <div class="benefit-content">
+                        <h3>Professional Confidence</h3>
+                        <p>
+                            Through chapter programming and campus involvement, members build the confidence and experience needed to take the next step toward law school and legal careers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>The Charlotte Experience</h2>
+            <div class="journey-grid">
+                <article class="journey-card">
+                    <h3>Guest Speakers</h3>
+                    <p>
+                        Hear directly from judges, attorneys, and representatives from the DA’s office about legal careers, courtroom realities, and professional pathways.
+                    </p>
+                </article>
+
+                <article class="journey-card">
+                    <h3>Law School Tours</h3>
+                    <p>
+                        Visit regional law schools and get a closer look at the environments, expectations, and opportunities that may shape your future.
+                    </p>
+                </article>
+
+                <article class="journey-card">
+                    <h3>Peer Community</h3>
+                    <p>
+                        Build connections with other UNC Charlotte students who understand the challenges of the pre-law path and want to support one another.
+                    </p>
+                </article>
+
+                <article class="journey-card">
+                    <h3>Leadership Growth</h3>
+                    <p>
+                        Take part in a chapter culture that encourages initiative, involvement, and meaningful leadership experience beyond the classroom.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="cta-split">
+            <div>
+                <h2>Take the Next Step</h2>
+                <p>
+                    Whether you are just exploring the legal field or preparing applications now, PAD at Charlotte gives you a place to learn, connect, and move forward with confidence.
+                </p>
+            </div>
+            <div class="cta-actions">
+                <a href="events.html" class="btn">View Events</a>
+                <a href="contact.html" class="btn">Contact Us</a>
+            </div>
+        </section>
+    </main>
+  
+  <div data-include="components/footer.html"></div>
+  <script src="../scripts/HTMLInclude.min.js"></script>
+</body>
+</html>
