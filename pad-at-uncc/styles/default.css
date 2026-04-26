@@ -264,3 +264,144 @@ footer a:hover {
     }
 }
 
+/* Accordion */
+.accordion-item {
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.accordion-button {
+    width: 100%;
+    text-align: left;
+    background: #6a1b9a;
+    color: white;
+    border: none;
+    padding: 1rem 1.25rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.accordion-button:hover {
+    background: #58157f;
+}
+
+.accordion-content {
+    display: none;
+    padding: 1.25rem;
+    background: #fafafa;
+}
+
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+/* Tabs */
+#tabbed-info {
+    margin-top: 3rem;
+}
+
+.tabs-intro {
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+}
+
+.tabs-container {
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    overflow: hidden;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.tab-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: #f4eef8;
+    border-bottom: 1px solid #e3d7ec;
+}
+
+.tab-button {
+    background: transparent;
+    color: #6a1b9a;
+    border: none;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.tab-button:hover {
+    background: rgba(106, 27, 154, 0.08);
+}
+
+.tab-button.active {
+    background: #6a1b9a;
+    color: white;
+}
+
+.tab-panel {
+    display: none;
+    padding: 2rem;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+.tab-panel h3 {
+    margin-bottom: 1rem;
+}
+
+.tab-panel p {
+    margin-bottom: 1rem;
+}
+
+.tab-panel ul {
+    margin: 1rem 0 0 1.5rem;
+}
+
+.tab-panel li {
+    margin-bottom: 0.6rem;
+}
+
+@media (max-width: 700px) {
+    .tab-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .tab-button {
+        border-bottom: 1px solid #e3d7ec;
+    }
+
+    .tab-button:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Show/Hide Membership Details */
+.hidden-box {
+    display: none;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.hidden-box.show {
+    display: block;
+}
+
+.hidden-box h3 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
